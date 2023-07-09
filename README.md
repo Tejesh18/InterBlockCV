@@ -41,5 +41,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For any inquiries or support, please contact the project maintainer: [Your Name](mailto:youremail@example.com).
+For any inquiries or support, please contact the project maintainer: [Tejesh Annavarapu](tejeshannavarapu1804@gmail.com).
 
