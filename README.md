@@ -1,91 +1,45 @@
-# Resume chain
+# InterBlockCV
 
-## Introduction
+InterBlockCV is a blockchain-based platform that aims to achieve seamless resume sharing and data interoperability across different blockchain networks. It leverages the power of blockchain technology to provide a secure and decentralized solution for managing and sharing resumes.
 
-This project is an implementation of data sharing application between Ethereum and Hyperledger Fabric. It can also be regarded as the blockchain interoperability between permissionless blockchain and permissioned blockchain. Please feel free to clone it for testing and development purposes. 
+## Features
 
-## Installation Guide
+- **Resume Sharing:** Users can securely upload and share their resumes on the InterBlockCV platform.
+- **Blockchain Interoperability:** InterBlockCV allows for seamless resume data exchange between different blockchain networks, enabling users to access and verify resumes across multiple platforms.
+- **Decentralized Storage:** Resumes and related data are stored on decentralized storage networks, ensuring data integrity and availability.
+- **Data Privacy:** InterBlockCV prioritizes data privacy by implementing encryption and user-controlled access permissions.
+- **Resume Verification:** Resumes can be verified using smart contract-based verification mechanisms, providing employers and recruiters with confidence in the authenticity of the shared resumes.
+- **User-Friendly Interface:** The platform provides an intuitive and user-friendly interface for easy resume management and interaction.
 
-*Clone the repository*
+## Installation
 
-```
-git clone https://github.com/Myohannn/resume_chain.git
-```
+To install and run InterBlockCV locally, follow these steps:
 
-### Prerequisites for Hyperledger Fabric:
+1. Clone the repository: `git clone https://github.com/Tejesh18/InterBlockCV.git`
+2. Install dependencies: `npm install`
+3. Configure the necessary environment variables (e.g., blockchain network endpoints, storage configurations).
+4. Build the project: `npm run build`
+5. Start the application: `npm start`
 
-*Install docker:*
+Make sure to fulfill all the prerequisites and dependencies before running the application.
 
-[Docker installation guide](https://docs.docker.com/engine/install/)
+## Contributing
 
-*Install Hyperledger Fabric 2.0 binaries:*
-```
-curl -sSL https://bit.ly/2ysbOFE | bash -s -- 2.0.0
-```
+Contributions are welcome! If you'd like to contribute to InterBlockCV, please follow these guidelines:
 
-*Install Go*
+1. Fork the repository and create your branch: `git checkout -b my-feature`
+2. Make your changes and test thoroughly.
+3. Commit your changes: `git commit -m 'Add my feature'`
+4. Push to the branch: `git push origin my-feature`
+5. Submit a pull request outlining your changes.
 
-[Go installation guide](https://go.dev/dl/)
+Please ensure that your contributions adhere to the project's coding standards and follow good development practices.
 
-*Install npm and node.js:*
+## License
 
-```
-curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-sudo apt-get install -y nodejs
-sudo apt-get install build-essential
-```
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
-*Install node dependencies from the package.json*
+## Contact
 
-```
-cd resume_chain/website
-npm install
-npm audit fix
-```
-
-### Prerequisites for Ethereum:
-
-*Install truffle*
-```
-npm install truffle (If fails, try sudo install -g truffle)
-```
-
-*Install Ganache*
-
-[Ganache installation guide](https://github.com/trufflesuite/ganache-ui/releases)   
-
-*Set up Ganache*
- 
- Create a new workplace and import resume_chain/eth/truffle/truffle-config.js
- 
- ```
- cd resume_chain/eth/truffle
-
- truffle migrate
- ```
-Copy the generated contract address and replace the contract address in resume_chain/website/employee.html and resume_chain/website/employer.html
-```
-var mycontract = new web3.eth.Contract(abi, <-replace your contract address here->);
-```
-
-### To run the code
-```
-cd resume_chain
-./start_Network.sh
-```
-
-## Demostration
-
-View employee page at: http://localhost:8000/employee
-
-![employee page](employee_page.png)   
-
-View employer page at: http://localhost:8000/employer
-
-![employer page](employer_page.png)  
-
-
-
-
-
+For any inquiries or support, please contact the project maintainer: [Your Name](mailto:youremail@example.com).
 
