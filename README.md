@@ -11,33 +11,85 @@ InterBlockCV is a blockchain-based platform that aims to achieve seamless resume
 - **Resume Verification:** Resumes can be verified using smart contract-based verification mechanisms, providing employers and recruiters with confidence in the authenticity of the shared resumes.
 - **User-Friendly Interface:** The platform provides an intuitive and user-friendly interface for easy resume management and interaction.
 
-## Installation
+## Installation Guide
 
-To install and run InterBlockCV locally, follow these steps:
+*Clone the repository*
 
-1. Clone the repository: `git clone https://github.com/Tejesh18/InterBlockCV.git`
-2. Install dependencies: `npm install`
-3. Configure the necessary environment variables (e.g., blockchain network endpoints, storage configurations).
-4. Build the project: `npm run build`
-5. Start the application: `npm start`
+```
+git clone https://github.com/Tejesh18/InterBlockCV.git
+```
 
-Make sure to fulfill all the prerequisites and dependencies before running the application.
+### Prerequisites for Hyperledger Fabric:
 
-## Contributing
+*Install docker:*
 
-Contributions are welcome! If you'd like to contribute to InterBlockCV, please follow these guidelines:
+[Docker installation guide](https://docs.docker.com/engine/install/)
 
-1. Fork the repository and create your branch: `git checkout -b my-feature`
-2. Make your changes and test thoroughly.
-3. Commit your changes: `git commit -m 'Add my feature'`
-4. Push to the branch: `git push origin my-feature`
-5. Submit a pull request outlining your changes.
+*Install Hyperledger Fabric 2.0 binaries:*
+```
+curl -sSL https://bit.ly/2ysbOFE | bash -s -- 2.0.0
+```
 
-Please ensure that your contributions adhere to the project's coding standards and follow good development practices.
+*Install Go*
 
-## License
+[Go installation guide](https://go.dev/dl/)
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+*Install npm and node.js:*
+
+```
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo apt-get install build-essential
+```
+
+*Install node dependencies from the package.json*
+
+```
+cd resume_chain/website
+npm install
+npm audit fix
+```
+
+### Prerequisites for Ethereum:
+
+*Install truffle*
+```
+npm install truffle (If fails, try sudo install -g truffle)
+```
+
+*Install Ganache*
+
+[Ganache installation guide](https://github.com/trufflesuite/ganache-ui/releases)   
+
+*Set up Ganache*
+ 
+ Create a new workplace and import resume_chain/eth/truffle/truffle-config.js
+ 
+ ```
+ cd resume_chain/eth/truffle
+
+ truffle migrate
+ ```
+Copy the generated contract address and replace the contract address in resume_chain/website/employee.html and resume_chain/website/employer.html
+```
+var mycontract = new web3.eth.Contract(abi, <-replace your contract address here->);
+```
+
+### To run the code
+```
+cd resume_chain
+./start_Network.sh
+```
+
+## Demostration
+
+View employee page at: http://localhost:8000/employee
+
+![employee page](employee_page.png)   
+
+View employer page at: http://localhost:8000/employer
+
+![employer page](employer_page.png)  
 
 ## Contact
 
